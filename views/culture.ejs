@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+    <style>
+      .header {
+        background-image: url("images\ \(11\).jpeg");
+      }
+    </style>
+  </head>
+  <body>
+    <!--Navbar-->
+    <nav class="nav-con">
+      <div class="nav">
+        <h3>detik<span>com</span></h3>
+        <ul>
+          <a href="../home"><li>Home</li></a>
+          <a href="../arts"><li>Arts</li></a>
+          <a href="../business"><li>Business</li></a>
+          <a href="../culture"><li>Culture</li></a>
+          <a href="../earth"><li>Earth</li></a>
+          <a href="../innovation"><li>Innovation</li></a>
+          <a href="../travel"><li>Travels</li></a>
+        </ul>
+        <div>
+          <img
+            id="icon"
+            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAZ0lEQVR4nO3WwQmAQAwF0SlPt/+zC4t9RGxAZRH84DzIPTkEBiRJek8DOlDh04H16pARsGQ9nP0Xh6zAFrBk3cy54zL7P5IkSR9pZjxZ9TsCyrbMeEmSpGzNjCerfkdAnpcZL0kScw7zFAKxsVXx1wAAAABJRU5ErkJggg=="
+          />
+        </div>
+      <section id="dropdown">
+        <a href="../home"><li>Home</li></a>
+        <a href="../arts"><li>Arts</li></a>
+        <a href="../business"><li>Business</li></a>
+        <a href="../culture"><li>Culture</li></a>
+        <a href="../earth"><li>Earth</li></a>
+        <a href="../innovation"><li>Innovation</li></a>
+        <a href="../travel"><li>Travels</li></a>
+      </section>
+    </nav>
+
+    <!--Header-->
+    <div class="header-con">
+      <div class="header" style="background-image: 'url(<%= items[0].img%>)'">
+        <section>
+          <h1> <%= items[4].headline %></h1>
+          <br />
+          <p> <%= items[4].text %> </p>
+        </section>
+        <div>
+          <img src="./Frame 5.png" />
+        </div>
+      </div>
+    </div>
+    <!--filter-->
+    <br />
+    <br />
+    <br />
+
+    <div class="navi">
+      <ul>
+        <a href="../home"><li>Home</li></a>
+        <a href="../arts"><li>Arts</li></a>
+        <a href="../business"><li>Business</li></a>
+        <a href="../culture"><li>Culture</li></a>
+        <a href="../earth"><li>Earth</li></a>
+        <a href="../innovation"><li>Innovation</li></a>
+        <a href="../travel"><li>Travels</li></a>
+      </ul>
+    </div>
+    <br />
+    <br />
+    <!--First Grid-->
+    <div class="first-con">
+      <div class="first">
+        <div>
+          <a href="<%= items[0].url %>" target="_blank">
+            <img srcset="<%= items[0].img %> " />
+            <span>
+              <p><b><%= items[0].headline %></b></p>
+              <br />
+              <p><%= items[0].text %></p>
+            </span>
+          </a>
+        </div>
+        <section>
+          <div>
+            <a href="<%= items[1].url %>" target="_blank">
+              <img srcset="<%= items[1].img %> " />
+              <span>
+                <p><b><%= items[1].headline %></b></p>
+                <br />
+                <p><%= items[1].text %></p>
+                <br />
+                <small><%= items[1].date%></small
+                ><small> | <%= items[1].location%></small>
+              </span>
+            </a>
+          </div>
+          <hr />
+          <div>
+            <a href="<%= items[2].url %>" target="_blank">
+              <img srcset="<%= items[2].img %> " />
+              <span>
+                <p><b><%= items[2].headline %></b></p>
+                <br />
+                <p><%= items[2].text %></p>
+                <br />
+                <small><%= items[1].date%></small
+                ><small> | <%= items[1].location%></small>
+              </span>
+            </a>
+          </div>
+        </section>
+      </div>
+    </div>
+    <br />
+    <br />
+    <div class="second-con">
+      <div class="second">
+        <% items.slice(4, 200).forEach(item=>{ %>
+        <div>
+          <a href="<%= item.url %>" target="_blank">
+            <img srcset="<%= item.img %>" />
+            <br />
+            <p><b><%= item.headline %></b></p>
+            <p><%= item.text %></p>
+            <br />
+            <small><%= item.date %> | <%= item.location %></small>
+          </a>
+        </div>
+        <%})%>
+      </div>
+    </div>
+    <script>
+      const icon = document.querySelector("#icon");
+      icon.addEventListener("click", () => {
+        if (
+          icon.src ===
+          "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAZ0lEQVR4nO3WwQmAQAwF0SlPt/+zC4t9RGxAZRH84DzIPTkEBiRJek8DOlDh04H16pARsGQ9nP0Xh6zAFrBk3cy54zL7P5IkSR9pZjxZ9TsCyrbMeEmSpGzNjCerfkdAnpcZL0kScw7zFAKxsVXx1wAAAABJRU5ErkJggg=="
+        ) {
+          icon.src =
+            "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAABN0lEQVR4nO3ZTWrDMBCG4fcoXfQkLZTuK83CSc6eRc8QAk0hJWBDMTFxJM1oLPRBdsYzj34S2YGenp6e1vIKhIr1w9hDVl6AI/ALHLCPABfgOwczIa7jxxojI2Kqn4yJY/PXGWaHfnYLtW89FRkVi5kRrZqWGNGuZYExGzDNQuZLWBQK1tiHxQtXQ5RsoDqiRCNuEDkNuUOkNOYW8UyD7hFrGt0M4tFhr9bhMyv3Rn8zM7EWsylEMxBpYWkNLWx2aeHrNy40uv93jXtMXIFwj4lPINxiYgLCHSZkINxgQgFEdUxYKJzzm2COCQoIc0xQRJhhAvBjdMQQLczXAuJ2ptKKlMbcW06XnFf7BZ40h5SbfQBnw5mYZz4zJ+A99WYTxhoxx2QhpnxW/jN0AN4q1u/p6emhfP4AxlR3VfJGRpkAAAAASUVORK5CYII=";
+          document.querySelector("#dropdown").style.height = "100vh";
+        } else {
+          icon.src =
+            "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAZ0lEQVR4nO3WwQmAQAwF0SlPt/+zC4t9RGxAZRH84DzIPTkEBiRJek8DOlDh04H16pARsGQ9nP0Xh6zAFrBk3cy54zL7P5IkSR9pZjxZ9TsCyrbMeEmSpGzNjCerfkdAnpcZL0kScw7zFAKxsVXx1wAAAABJRU5ErkJggg==";
+          document.querySelector("#dropdown").style.height = 0;
+        }
+      });
+    </script>
+  </body>
+</html>
